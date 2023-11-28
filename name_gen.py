@@ -1,11 +1,12 @@
 def character_combinations(s):
     if len(s) <= 1:
-        return [s]
+        return {s}
 
-    combinations = []
+    combinations = set()
     for i, char in enumerate(s):
-        for combo in character_combinations(s[:i] + s[i+1:]):
-            combinations.append(char + combo)
+        remaining_chars = s[:i] + s[i + 1:]
+        for combo in character_combinations(remaining_chars):
+            combinations.add(char + combo)
 
     return combinations
 
