@@ -16,4 +16,4 @@ print("All possible character combinations:")
 result = character_combinations(input_string)
 for combination in result:
     print(combination)
-print("Number of combinations: "+str(len(combination)))
+print("Number of combinations: "+str(len(result)))
